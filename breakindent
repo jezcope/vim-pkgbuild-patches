@@ -15,7 +15,7 @@ Index: vim/PKGBUILD
            '3494baf53a63581ba69f86a81293640ff681c5c5'
            '25dd3c2ce436e73a367c8f73b68f7f6889682437'
            '4a579cf66590d711f49c5dfb4a25e5df116ff7ba')
-@@ -70,6 +72,8 @@ build() {
+@@ -73,6 +75,8 @@ build() {
  
    cd "${srcdir}"/vim-build
  
@@ -24,7 +24,7 @@ Index: vim/PKGBUILD
    ./configure --prefix=/usr --localstatedir=/var/lib/vim \
      --with-features=big --with-compiledby=ArchLinux \
      --enable-gpm --enable-acl --with-x=no \
-@@ -81,6 +85,8 @@ build() {
+@@ -84,6 +88,8 @@ build() {
  
    cd "${srcdir}"/gvim-build
  
