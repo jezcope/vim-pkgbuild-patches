@@ -2,20 +2,22 @@ Index: vim/PKGBUILD
 ===================================================================
 --- vim.orig/PKGBUILD
 +++ vim/PKGBUILD
-@@ -17,10 +17,12 @@ url="http://www.vim.org"
- makedepends=('gpm' 'python2' 'ruby' 'libxt' 'desktop-file-utils' 'gtk2' 'lua')
- source=(ftp://ftp.archlinux.org/other/vim/${pkgname}-${pkgver}.tar.xz{,.sig}
-         pythoncomplete.vim::http://www.vim.org/scripts/download_script.php\?src_id=10872
-+        https://retracile.net/raw-attachment/blog/2011/08/23/21.30/vim-7.3.285-breakindent.patch
-         vimrc archlinux.vim gvim.desktop)
- sha1sums=('4181e211d0150cda9b3dbd815ec4aa14a6d28196'
-           '039f92d62556a7ccc48ef4ded3c5e02578470b05'
+@@ -18,12 +18,14 @@ makedepends=('gpm' 'python2' 'ruby' 'lib
+ source=("ftp://ftp.archlinux.org/other/vim/vim-${pkgver}.tar.xz"
+         "ftp://ftp.archlinux.org/other/vim/vim-${pkgver}.tar.xz.sig"
+         'pythoncomplete.vim::http://www.vim.org/scripts/download_script.php?src_id=10872'
++        'https://retracile.net/raw-attachment/blog/2011/08/23/21.30/vim-7.3.285-breakindent.patch'
+         'vimrc'
+         'archlinux.vim'
+         'gvim.desktop')
+ sha1sums=('2c4f78a66b6ad7a759122d1f66c74079b678f39c'
+           '999f527d82a4c7818d017e3b8230e27950e87718'
            '4d9dcfb32874aa5467e6f06e418aeb4e675daaf2'
 +          'b9d2e34e6942eeae2e7ff4d10316fd97e95508e6'
            '3494baf53a63581ba69f86a81293640ff681c5c5'
            '25dd3c2ce436e73a367c8f73b68f7f6889682437'
            '4a579cf66590d711f49c5dfb4a25e5df116ff7ba')
-@@ -73,6 +75,8 @@ build() {
+@@ -77,6 +79,8 @@ build() {
  
    cd "${srcdir}"/vim-build
  
@@ -24,7 +26,7 @@ Index: vim/PKGBUILD
    ./configure --prefix=/usr --localstatedir=/var/lib/vim \
      --with-features=big --with-compiledby=ArchLinux \
      --enable-gpm --enable-acl --with-x=no \
-@@ -84,6 +88,8 @@ build() {
+@@ -88,6 +92,8 @@ build() {
  
    cd "${srcdir}"/gvim-build
  
