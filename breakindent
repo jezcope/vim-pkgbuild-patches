@@ -2,36 +2,29 @@ Index: vim/PKGBUILD
 ===================================================================
 --- vim.orig/PKGBUILD
 +++ vim/PKGBUILD
-@@ -18,12 +18,14 @@ makedepends=('gpm' 'python2' 'ruby' 'lib
- source=("ftp://ftp.archlinux.org/other/vim/vim-${pkgver}.tar.xz"
+@@ -19,4 +19,5 @@ source=("ftp://ftp.archlinux.org/other/v
          "ftp://ftp.archlinux.org/other/vim/vim-${pkgver}.tar.xz.sig"
          'pythoncomplete.vim::http://www.vim.org/scripts/download_script.php?src_id=10872'
 +        'https://retracile.net/raw-attachment/blog/2011/08/23/21.30/vim-7.3.285-breakindent.patch'
          'vimrc'
          'archlinux.vim'
-         'gvim.desktop')
- md5sums=('368435a6494a2559565ce4d668c4513c'
-          '1613bbbd2a794cd321db09c6cfe2d35f'
+@@ -25,4 +26,5 @@ md5sums=('187bec934962a7b5418dbe233e606e
+          '3a41d935a372c712088cdee997e1287f'
           '6e7adfbd5d26c1d161030ec203a7f243'
 +         'ac416af0b9ced53b67bba177af26fc6c'
           '20fceda56badf201695c57999b0bc609'
           '10353a61aadc3f276692d0e17db1478e'
-          'd90413bd21f400313a785bb4010120cd')
-@@ -71,6 +73,8 @@ build() {
- 
+@@ -75,4 +77,6 @@ build() {
    cd "${srcdir}"/vim-build
  
 +  patch -p1 -i ../vim-7.3.285-breakindent.patch
 +
-   ./configure --prefix=/usr --localstatedir=/var/lib/vim \
-     --with-features=big --with-compiledby=ArchLinux \
-     --enable-gpm --enable-acl --with-x=no \
-@@ -82,6 +86,8 @@ build() {
- 
+   ./configure \
+     --prefix=/usr \
+@@ -97,4 +101,6 @@ build() {
    cd "${srcdir}"/gvim-build
  
 +  patch -p1 -i ../vim-7.3.285-breakindent.patch
 +
-   ./configure --prefix=/usr --localstatedir=/var/lib/vim \
-     --with-features=big --with-compiledby=ArchLinux \
-     --enable-gpm --enable-acl --with-x=yes \
+   ./configure \
+     --prefix=/usr \
